@@ -1,7 +1,7 @@
 .. _index:
 
 Welcome to RealDeviceMap's documentation!
-=====================================
+=========================================
 
 
 |discord| |nbsp| |nbsp| |github| |nbsp| |issues| |nbsp| |feathub|
