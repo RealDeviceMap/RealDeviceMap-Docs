@@ -11,15 +11,14 @@ Welcome to RealDeviceMap's documentation!
 
 RealDeviceMap is a Leaflet/OSM based Frontend with backend features. It includes a JSON and Protobuf parser for Pokemon Go Data Objects. It also includes a basic proof of concept Instance and Device Manager.
 
-
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :caption: Initial Setup
    :glob:
 
-   getting-started/installation
-   getting-started/faq
+   realdevicemap/index
+   realdevicemapui/index
+
 
 
 .. |discord| image:: https://discordapp.com/api/guilds/456432530531549195/widget.png?style=shield
