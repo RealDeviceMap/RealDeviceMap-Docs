@@ -11,4 +11,5 @@ Instructions for RDMUI and RDMUI Beta
    :glob:
 
    requirements
+   devicesetup
    installation

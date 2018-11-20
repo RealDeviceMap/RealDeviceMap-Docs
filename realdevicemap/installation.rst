@@ -1,31 +1,31 @@
 ###########################
 Installation
 ###########################
-.. raw:: html
-
-   <style>
-      h1:before {
-         content: "RDM ";
-      }
-   </style>
+.. contents::
+   :local:
 
 | The follwing guide applies to RDM and can be installed everywhere (any OS that runs Docker) including away from the Workers/Xcode.
 
-Installation with docker-compose (install `Docker <https://www.docker.com/get-started>`_ and `docker-compose <https://docs.docker.com/compose/install/#install-compose>`_ if installed)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Installation
+------------
+
+with docker-compose (install `Docker <https://www.docker.com/get-started>`_ and `docker-compose <https://docs.docker.com/compose/install/#install-compose>`_ if installed)
 
 - Create a new folder for your compose files and RealDevieMap (example: mkdir compose/rdm)
 - Switch into that folder (example: cd compose/rdm)
-- Get the composer file: ::
+- Get the composer file::
 
-   wget https://raw.githubusercontent.com/123FLO321/RealDeviceMap/master/docker-compose.yml 
-   
-- | Edit the file (example nano docker-compose.yml)
-  | Things to change if you want to use a new db server on that instance (recommended):
+    wget https://raw.githubusercontent.com/123FLO321/RealDeviceMap/master/docker-compose.yml
 
-  * edit the value for DB_PASSWORD and MYSQL_PASSWORD to a secure password for the rdmuser
-  * edit the value for MYSQL_ROOT_PASSWORD to a secure password for the root user
-  * if you run a db on port 3306 already: 
+- Edit the file::
+
+    nano docker-compose.yml
+
+  Things to change if you want to use a new db server on that instance (recommended):
+
+  - edit the value for DB_PASSWORD and MYSQL_PASSWORD to a secure password for the rdmuser
+  - edit the value for MYSQL_ROOT_PASSWORD to a secure password for the root user
+  - if you run a db on port 3306 already: 
   
     - edit 3306:3306 to 3307:3306 for example. The db will then be accessible on the host (localhost) at port 3007 Things to change if you want to use a new database on an existing server:
     - TODO

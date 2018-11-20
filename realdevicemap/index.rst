@@ -13,6 +13,6 @@ Instructions for RDM and RDM Beta
 
    requirements
    installation
-   instance
+   instances
    groups
    updating

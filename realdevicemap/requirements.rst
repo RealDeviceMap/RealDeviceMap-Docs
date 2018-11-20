@@ -2,15 +2,6 @@
 Requirements
 ###########################
 
-
-.. raw:: html
-
-   <style>
-      h1:before {
-         content: "RDM ";
-      }
-   </style>
-
 * `Docker <https://www.docker.com/get-started>`_  (and `docker-compose <https://docs.docker.com/compose/install/#install-compose>`_ if not included already)
 
 * At least one :doc:`../realdevicemapui/index` Device-Controller 

@@ -13,7 +13,7 @@ RealDeviceMap is a Leaflet/OSM based Frontend with backend features. It includes
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    realdevicemap/index
