@@ -10,4 +10,5 @@ Instructions for RDMUI and RDMUI Beta
    :maxdepth: 1
    :glob:
 
-   *
+   requirements
+   installation

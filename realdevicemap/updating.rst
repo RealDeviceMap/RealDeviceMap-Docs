@@ -10,6 +10,9 @@ Updating
    </style>
    
 Updating with docker-compose
-docker-compose pull
-docker-compose down
-docker-compose up -d
+----------------------------
+ ::
+
+   docker-compose pull
+   docker-compose down
+   docker-compose up -d
