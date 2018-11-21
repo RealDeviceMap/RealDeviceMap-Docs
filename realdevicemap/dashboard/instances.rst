@@ -1,6 +1,7 @@
-###########################
+#########
 Instances
-###########################
+#########
+.. include:: ../../formatting.rst
 .. contents::
    :local:
    
@@ -34,7 +35,7 @@ Create a new Instance
   - ``Auto Quest`` Scans all pokestops in the geofence for quests
 
     - Name: A unique name of the Instance
-    - Timezone offset: Your timezone offset from GMT in seconds. (ie. if you are GMT-8 do -8*3600=-28800)
+    - Timezone offset: Your timezone offset from GMT in seconds. (ie. if you are GMT-8 do -8*3600=-28800). This is used to auto clear your database quests at midnight local time.
     - Min Level: Minimum worker level
     - Max Level: Maximum worker level
     - Scan Area: This scheduler type requires your database to be populated with pokestops already and then uses geofences to pull the pokestops. Geofences should be populated like
@@ -62,8 +63,8 @@ Mapping Tools
 - `https://jennerpalacios.github.io/PoGoMappingTool/ <https://jennerpalacios.github.io/PoGoMappingTool/>`_
 - `https://www.mapdevelopers.com/draw-circle-tool.php <https://www.mapdevelopers.com/draw-circle-tool.php>`_
 
-Examples
----------
+Scan Area Examples
+------------------
 
 Geofence Example: (for Auto Quest and Pokemon IV) ::
 
@@ -78,11 +79,11 @@ Geofence Example: (for Auto Quest and Pokemon IV) ::
    48.2802687893262,-122.818615234375
    48.333247949859,-122.9449580078125
 
-.. figure:: ../images/geofence1.png
+.. figure:: ../../images/geofence1.png
    
    Geofence 1
    
-.. figure:: ../images/geofence2.png
+.. figure:: ../../images/geofence2.png
 
    Geofence 2
 
@@ -94,7 +95,7 @@ Circle List Example: (for Circle Pokemon and Circle Raids) ::
    32.296165865665564,-64.77667808532716
    32.30229634239795,-64.79234218597414
 
-.. figure:: ../images/circlelist.png
+.. figure:: ../../images/circlelist.png
    :scale: 50 %
 
    Circle List

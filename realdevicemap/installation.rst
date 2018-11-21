@@ -1,18 +1,22 @@
-###########################
+############
 Installation
-###########################
+############
+| This guide assumes you have the :doc:`requirements installed<requirements>`.
+
 .. contents::
    :local:
 
-| The follwing guide applies to RDM and can be installed everywhere (any OS that runs Docker) including away from the Workers/Xcode.
+RDM Setup Process
+-----------------
 
-Installation
-------------
+- Create a new folder for your compose files and RealDeviceMap::
 
-with docker-compose (install `Docker <https://www.docker.com/get-started>`_ and `docker-compose <https://docs.docker.com/compose/install/#install-compose>`_ if installed)
+    mkdir compose/rdm
+    
+- Switch into that folder::
 
-- Create a new folder for your compose files and RealDevieMap (example: mkdir compose/rdm)
-- Switch into that folder (example: cd compose/rdm)
+    compose/rdm
+
 - Get the composer file::
 
     wget https://raw.githubusercontent.com/123FLO321/RealDeviceMap/master/docker-compose.yml
@@ -21,18 +25,50 @@ with docker-compose (install `Docker <https://www.docker.com/get-started>`_ and 
 
     nano docker-compose.yml
 
-  Things to change if you want to use a new db server on that instance (recommended):
+- If you are using the RDM included docker database
 
-  - edit the value for DB_PASSWORD and MYSQL_PASSWORD to a secure password for the rdmuser
-  - edit the value for MYSQL_ROOT_PASSWORD to a secure password for the root user
-  - if you run a db on port 3306 already: 
+  - Edit the values for \`DB_USERNAME\` & \`DB_PASSWORD\` and \`MYSQL_USER MYSQL_PASSWORD\`. Recommend using \`rdmuser\` as the username and a secure password. The username and password should match in both sections.
+  - Edit the value for \`MYSQL_ROOT_PASSWORD\` to a secure password for the root user.
+  - Everything else can stay at default
+  - if you run a database on port 3306 already (and not using it for this project): 
   
-    - edit 3306:3306 to 3307:3306 for example. The db will then be accessible on the host (localhost) at port 3007 Things to change if you want to use a new database on an existing server:
-    - TODO
+    - edit 3306:3306 to 3307:3306 for example. The db will then be accessible on the host (localhost) at port 3307
     
-- Start the Database Server (if you chose to use a new one): docker-compose up -d db 
-- Start the RealDeviceMap Server (don't add -d the first time so we can get the token): docker-compose up rdm 
-- Visit http://localhost:9000 and create an admin account with the access-token you see in the output of that command
+  - Start the docker Database Server::
+        
+        docker-compose up -d db 
+
+- If you are using an existing database
+
+    - Edit the values for \`DB_HOST\`, \`DB_DATABASE\`, \`DB_USERNAME\` & \`DB_PASSWORD\` to match your existing database configuration.
+    - Remove or comment out the following lines/sections from the document::
+    
+        depends_on:
+        - db
+        
+        ...
+        
+          db:
+            image: mysql
+            command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+            container_name: realdevicemap-db
+            restart: unless-stopped
+            environment:
+              MYSQL_ROOT_PASSWORD: YourStrongRootPassw0rd!
+              MYSQL_DATABASE: rdmdb
+              MYSQL_USER: rdmuser
+              MYSQL_PASSWORD: YourStrongPassw0rd!
+            ports:
+              - 3306:3306
+            volumes:
+              - data:/var/lib/mysql
+            #     - /etc/localtime:/etc/localtime:ro
+
+- Start the RealDeviceMap Server (don't add -d the first time so we can get the token)::
+
+    docker-compose up rdm 
+    
+- Visit http://localhost:9000 (or whatever the server ip/hostname to your VPN is) and create an admin account with the access-token you see in the output of that command
 - The map will start at 0,0 (blue ocean)
 - Click Dashboard -> Settings and edit the start location
 - RDM is now running on your system 🍻
@@ -40,47 +76,10 @@ with docker-compose (install `Docker <https://www.docker.com/get-started>`_ and 
 
    docker-compose up -d rdm 
 
-Installing Images
------------------
 
-On Linux
-========
+What Next?
+----------
 
-- find the volume name: docker volume ls (usually named rdm_image or realdevicemap_image)
-- find it's "Mountpoint" docker volume inspect rdm_images 
-- add images to egg, gym, pokemon, pokestop and unkown_egg in there 
-- example images can be found here (extract all contents from example images into the volume path) (Icons by Icons8)
-- restart rdm to create raid images (docker-compose down && docker-compose up -d from the compose/rdm folder)
+- Setup :doc:`Map Images <mapimages>`
+- Setup one or more :doc:`RealDeviceMap-UIControl Device Controllers<../realdevicemapui/index>`
 
-On MacOS
-========
-
-- stop rum docker-compose down 
-- edit docker-compose.yml
-- change ::
-
-   images:/perfect-deployed/realdevicemap/resources/webroot/static/img 
-   
-  to ::
-  
-   /absolut/path/to/images:/perfect-deployed/realdevicemap/resources/webroot/static/img 
-   
-- go to that folder (e.g.: /absolut/path/to/images)
-- add images to egg, gym, pokemon, pokestop and unkown_egg in there 
-- example images can be found here (extract all contents from example images into the volume path) (Icons by Icons8)
-- restart rdm to create raid images ::
-
-    docker-compose down && docker-compose up -d
-
-  (from the compose/rdm folder)
-
-On Windows
-==========
-- (todo)
-
-TODO
-====
-
-- Continue with the Installation of one of the compatible RDM-API Device Controllers
-- RealDeviceMap-UIControl
-- requires a Jailbroken iOS Device with Poke++ and MacOS (or VM) with Xcode

@@ -43,7 +43,12 @@ release = u''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+'sphinxcontrib.images' #requires pip install sphinxcontrib-images
 ]
+
+images_config = {
+    'default_image_width': 200
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

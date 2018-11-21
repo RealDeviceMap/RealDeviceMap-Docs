@@ -27,13 +27,24 @@ Setting up the Xcode project
     pod install
     
 - Open the Xcode Project (open RealDeviceMap-UIControl.xcworkspace)
-- Open RealDeviceRaidMap-UIControl -> RealDeviceMap-UIControl -> config.swift
+- Open RealDeviceRaidMap-UIControl -> RealDeviceMap-UIControl -> ``config.swift``
 - Edit UUID to be something unique (ie iphoneSE1). This will be how you identify which phone is which in your dashboard later on.
 - Edit backendURLBaseString to your server where RDM is running on. It needs to acces the WebHook server by default running at port 9001.
-- Check if you can acces that url on your phone. If it says "File / does not exist" it works.
-- Fix code signing issues and bundle id conflicts (type update in #boto-spam on our Discord)
+- If you want to use AccountManager add the following line::
 
-   - need to add these steps here
+    var enableAccountManager = true
+    
+- Check if you can acces that url on your phone. If it says "File / does not exist" it works.
+- Fix code signing issues and bundle id conflicts:
+
+   .. thumbnail:: ../images/XcodeHelp1.jpg
+      :title: Xcode code signing step 1
+          
+   .. thumbnail:: ../images/XcodeHelp2.png
+      :title: Xcode code signing step 2
+      
+   .. thumbnail:: ../images/XcodeHelp3.png
+      :title: Xcode code signing step 3
 
 - Close Xcode and edit run.py 
 - Edit \`device_id\` to match your devices UUID (not the same as in config.swift above)
@@ -44,4 +55,4 @@ Setting up the Xcode project
 
     python2 run.py
 
-- It should now take a couple minutes to build and eventually open Pogo. If you get device is not asigned to an instance follow the :doc:`Instances instructions<../realdevicemap/instances>`.
+- It should now take a couple minutes to build and eventually open Pogo. If you get device is not asigned to an instance follow the :doc:`Instances instructions<../realdevicemap/dashboard/instances>`.
