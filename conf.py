@@ -24,8 +24,8 @@ source_parsers = {
 # -- Project information -----------------------------------------------------
 
 project = u'RealDeviceMap'
-copyright = u'2018, 123FLO321'
-author = u'123FLO321'
+copyright = u'GPL-3.0, RealDeviceMap Contributors'
+author = u'RealDeviceMap Contributors'
 
 # The short X.Y version
 version = u''
