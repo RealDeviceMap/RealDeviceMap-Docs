@@ -161,7 +161,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'RealDeviceMap.tex', u'RealDeviceMap Documentation',
-     u'123FLO321', 'manual'),
+     [author], 'manual'),
 ]
 
 
