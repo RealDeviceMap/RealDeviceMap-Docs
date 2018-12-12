@@ -15,3 +15,5 @@ RealDeviceMap
    mapimages
    updating
    dashboard/index
+   develop
+   deploy
