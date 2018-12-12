@@ -5,9 +5,16 @@ Develop
 .. contents::
   :local:
 
+Install Requirements
+----------------------------
+- Xcode 9+: From App Store
+- MysqlClient 5.7: ``brew install mysql@5.7 && brew link mysql@5.7 --force``
+- ImageMagick: ``brew install imagemagick``
+
+
 Generate the Xcode Project
 ----------------------------
-Run this in the RDM folder: ``swift package generate-xcodeproj``
+- Run this in the RDM folder: ``swift package generate-xcodeproj``
 
 
 Configure Xcode Project
