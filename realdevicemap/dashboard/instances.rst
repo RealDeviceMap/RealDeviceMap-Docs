@@ -62,6 +62,8 @@ Mapping Tools
 - `RDM Tools <https://github.com/abakedapplepie/RealDeviceMap-tools>`_
 - `https://jennerpalacios.github.io/PoGoMappingTool/ <https://jennerpalacios.github.io/PoGoMappingTool/>`_
 - `https://www.mapdevelopers.com/draw-circle-tool.php <https://www.mapdevelopers.com/draw-circle-tool.php>`_
+- `https://thermoscookies.github.io/rdmsort/ <https://thermoscookies.github.io/rdmsort/>`_
+
 
 Scan Area Examples
 ------------------
