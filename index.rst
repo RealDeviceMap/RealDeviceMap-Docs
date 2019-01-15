@@ -22,9 +22,9 @@ RealDeviceMap is a Leaflet/OSM based Frontend with backend features. It includes
 .. |discord| image:: https://discordapp.com/api/guilds/456432530531549195/widget.png?style=shield
     :target: https://discord.gg/4wqYrv7
 .. |github| image:: https://img.shields.io/badge/github-RealDeviceMap-green.svg
-    :target: https://github.com/123FLO321/RealDeviceMap
-.. |issues| image:: https://img.shields.io/github/issues/123FLO321/RealDeviceMap.svg
-    :target: https://github.com/123FLO321/RealDeviceMap/issues
+    :target: https://github.com/RealDeviceMap/RealDeviceMap
+.. |issues| image:: https://img.shields.io/github/issues/RealDeviceMap/RealDeviceMap.svg
+    :target: https://github.com/RealDeviceMap/RealDeviceMap/issues
 .. |feathub| image:: https://img.shields.io/badge/feathub-RealDeviceMap-green.svg
     :target: https://feathub.com/123FLO321/RealDeviceMap
 .. |nbsp| unicode:: 0xA0
