@@ -6,8 +6,16 @@ Installation
 .. contents::
    :local:
 
-RDM Setup Process
+RDM Setup Process using Docker (any OS)
 -----------------
+
+- Create a GitHub acces token:
+   
+    Create a token with [repo] and [read:packages] here https://github.com/settings/tokens/new and copy the token
+    
+- Log into GitHub Package cloud (using your username as username and the token you created as password)::
+
+    docker login docker.pkg.github.com/realdevicemap/realdevicemap 
 
 - Create a new folder for your compose files and RealDeviceMap::
 
@@ -19,7 +27,7 @@ RDM Setup Process
 
 - Get the composer file::
 
-    wget https://raw.githubusercontent.com/123FLO321/RealDeviceMap/master/docker-compose.yml
+    wget https://raw.githubusercontent.com/RealDeviceMap/RealDeviceMap/master/docker-compose.yml
 
 - Edit the file::
 
@@ -76,10 +84,42 @@ RDM Setup Process
 
    docker-compose up -d rdm 
 
+RDM Setup Process using SwiftEnv (Ubuntu only)
+-----------------
+
+- Install SwiftEnv::
+
+    git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
+    echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"' >> ~/.bash_profile
+    echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(swiftenv init -)"' >> ~/.bash_profile
+
+- Clone RealDeviceMap::
+
+   git clone https://github.com/RealDeviceMap/RealDeviceMap
+   cd RealDeviceMap
+
+- Install required Swift version::
+
+   swiftenv install
+   
+- Start RealDeviceMap:
+   
+   - Start RDM with default settings::
+   
+      swift run
+      
+   - Remember to add Enviroment variables as needed::
+   
+      DB_PASSWORD=x swift run
+
+- Visit http://localhost:9000 (or whatever the server ip/hostname to your VPN is) and create an admin account with the access-token you see in the output of that command
+- The map will start at 0,0 (blue ocean)
+- Click Dashboard -> Settings and edit the start location
+- RDM is now running on your system 🍻
 
 What Next?
 ----------
 
 - Setup :doc:`Map Images <mapimages>`
 - Setup one or more :doc:`RealDeviceMap-UIControl Device Controllers<../realdevicemapui/index>`
-
