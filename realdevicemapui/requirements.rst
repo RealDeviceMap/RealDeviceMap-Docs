@@ -11,13 +11,9 @@ Requirements
 
     sudo gem install cocoapods 
     
-- Pyton Request via pip2::
-
-    pip2 install requests 
 
 - Iphone with one of the following installed:
   | **The following tow apps are 3rd party apps. We do not own these apps and do notsupport them in any way.**
   | **Use of PoGo++ and iSpoofers may be in violation of Niantic TOS and either or both apps may be in violation of applicable laws. Use them at your own risk!**
 
-- `iSpoofer <https://www.ispoofer.com/ispoofer-for-pokemon-gomapper-version/>`_
-- `Poke++ with mapping subscription <https://globalplusplus.com/>`_
+- There are currently not public MITM Apps available.
