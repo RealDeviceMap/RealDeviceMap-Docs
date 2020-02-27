@@ -93,6 +93,13 @@ RDM Setup Process using SwiftEnv (Ubuntu only)
     echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"' >> ~/.bash_profile
     echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(swiftenv init -)"' >> ~/.bash_profile
+    
+- Instll RealDeviceMap dependencies::
+
+     sudo apt-get update 
+     sudo apt-get install -y libssl-dev libcurl4-openssl-dev libmysqlclient-dev uuid-dev imagemagick mysql-client-5.7
+     sudo sed -i -e 's/-fabi-version=2 -fno-omit-frame-pointer//g' /usr/lib/x86_64-linux-gnu/pkgconfig/mysqlclient.pc 
+     sudo cp /usr/bin/convert /usr/local/bin
 
 - Clone RealDeviceMap::
 
