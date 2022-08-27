@@ -93,8 +93,11 @@ RDM Setup Process using SwiftEnv (Ubuntu only)
     echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"' >> ~/.bash_profile
     echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(swiftenv init -)"' >> ~/.bash_profile
+    restart your console to have changes take effect
     
-- Instll RealDeviceMap dependencies::
+    Note: depending on your distrobution, you may need to utilize `bashrc` instead of `bash_profile`
+    
+- Install RealDeviceMap dependencies::
 
      sudo apt-get update 
      sudo apt-get install -y libssl-dev libcurl4-openssl-dev libmysqlclient-dev uuid-dev imagemagick mysql-client-5.7
@@ -105,6 +108,11 @@ RDM Setup Process using SwiftEnv (Ubuntu only)
 
    git clone https://github.com/RealDeviceMap/RealDeviceMap
    cd RealDeviceMap
+   
+- Post install steps
+
+  cp ./resources/config/default.json.example ./resources/config/default.json
+  edit default.json file as appropriate
 
 - Install required Swift version::
 
@@ -115,10 +123,6 @@ RDM Setup Process using SwiftEnv (Ubuntu only)
    - Start RDM with default settings::
    
       swift run
-      
-   - Remember to add Enviroment variables as needed::
-   
-      DB_PASSWORD=x swift run
 
 - Visit http://localhost:9000 (or whatever the server ip/hostname to your VPN is) and create an admin account with the access-token you see in the output of that command
 - The map will start at 0,0 (blue ocean)
